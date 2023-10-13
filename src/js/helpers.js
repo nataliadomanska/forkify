@@ -1,5 +1,4 @@
 // it contains the functions that we reuse in our project
-import { async } from 'regenerator-runtime';
 import { TIMEOUT_SEC } from './config';
 
 const timeout = function (s) {

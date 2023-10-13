@@ -28,12 +28,9 @@ const controlRecipes = async function () {
   }
 };
 
-controlRecipes();
+// Publisher-Subscriber Pattern: fx from controller (handler) is passed into the function of view (listener)
+const init = function () {
+  recipeView.addHandlerRender(controlRecipes);
+};
 
-['hashchange', 'load'].forEach(ev =>
-  window.addEventListener(ev, controlRecipes)
-);
-
-window.addEventListener('hashchange', controlRecipes);
-
-window.addEventListener('load', controlRecipes);
+init();
