@@ -84,7 +84,13 @@ const controlAddBookmark = function () {
 };
 
 // Publisher-Subscriber Pattern: fx from controller (handler) is passed into the function of view (listener)
+
+const controlBookmarks = function () {
+  bookmarksView.render(model.state.bookmarks);
+};
+
 const init = function () {
+  bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
@@ -93,3 +99,7 @@ const init = function () {
 };
 
 init();
+
+const clearBookmarks = function () {
+  localStorage.clear('bookmarks');
+};
